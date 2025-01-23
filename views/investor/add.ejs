@@ -1,0 +1,219 @@
+<div
+  class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+>
+  <h1 class="h2">Investor</h1>
+  <div class="btn-toolbar mb-2 mb-md 0">
+    <div class="btn-group me-2">
+      <button class="btn btn-sm btn-outline-secondary">?</button>
+    </div>
+  </div>
+</div>
+
+<div class="col py-3">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+          <li class="breadcrumb-item active">New Investor</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col text-end fw-lighter">
+      <b>UserId</b>
+    </div>
+  </div>
+</div>
+
+<form action="/add" method="POST">
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        value=""
+        placeholder="Title"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        name="firstName"
+        value=""
+        placeholder="First Name"
+        required
+      />
+    </div>
+
+    <div class="col">
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        name="lastName"
+        value=""
+        placeholder="Last Name"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="phoneNumber">Phone Number</label>
+      <input
+        type="text"
+        class="form-control"
+        id="phoneNumber"
+        name="phoneNumber"
+        value=""
+        placeholder="Phone Number"
+        required
+      />
+    </div>
+
+    <div class="col">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        name="email"
+        value=""
+        placeholder="Email"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="organization">Organization</label>
+      <input
+        type="text"
+        class="form-control"
+        id="organization"
+        name="organization"
+        value=""
+        placeholder="Organization"
+        required
+      />
+    </div>
+
+    <div class="col">
+      <label for="sector">Sector</label>
+      <input
+        type="text"
+        class="form-control"
+        id="sector"
+        name="sector"
+        value=""
+        placeholder="Sector"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="meansOfContact">Means of Contact</label>
+      <select
+        class="form-control"
+        id="meansOfContact"
+        name="meansOfContact"
+        required
+      >
+        <option value="" disabled selected>Select Means of Contact</option>
+        <% enumData.meansOfContact.forEach(means => { %>
+        <option value="<%= means %>"><%= means %></option>
+        <% }); %>
+      </select>
+    </div>
+
+    <div class="col">
+      <label for="registered">Registered</label>
+      <input
+        type="text"
+        class="form-control"
+        id="registered"
+        name="registered"
+        value=""
+        placeholder="Registered"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="committed">Committed</label>
+      <input
+        type="text"
+        class="form-control"
+        id="committed"
+        name="committed"
+        value=""
+        placeholder="Committed"
+        required
+      />
+    </div>
+
+    <div class="col">
+      <label for="eventAttended">Event Attended</label>
+      <input
+        type="text"
+        class="form-control"
+        id="eventAttended"
+        name="eventAttended"
+        value=""
+        placeholder="Event Attended"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="progressUpdate">Progress Update</label>
+      <input
+        type="text"
+        class="form-control"
+        id="progressUpdate"
+        name="progressUpdate"
+        value=""
+        placeholder="Progress Update"
+        required
+      />
+    </div>
+
+    <div class="col">
+      <label for="temperatureLevel">Temperature Level</label>
+      <select
+        class="form-control"
+        id="temperatureLevel"
+        name="temperatureLevel"
+        required
+      >
+        <option value="" disabled selected>Select Temperature Level</option>
+        <% enumData.temperatureLevel.forEach(level => { %>
+        <option value="<%= level %>"><%= level %></option>
+        <% }); %>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group mb-4">
+    <button type="submit" class="btn btn-primary">Add Investor</button>
+  </div>
+</form>

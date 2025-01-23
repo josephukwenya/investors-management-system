@@ -32,6 +32,7 @@ const InvestorSchema = new Schema({
   },
   meansOfContact: {
     type: String,
+    enum: ['Social media ads', 'Referral', 'In-person'],
     required: [true, 'Means of contact is required'],
   },
   registered: {

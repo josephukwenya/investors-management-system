@@ -32,11 +32,11 @@ exports.homepage = async (req, res) => {
       messages,
     });
   } catch (error) {
-    console.log(error);
+    res.status(500).json({ message: error.message });
   }
 };
 
-exports.about = async (req, res) => {
+exports.about = async (_req, res) => {
   const locals = {
     title: 'About',
     description: 'NCDF Investors Management System',
@@ -45,11 +45,11 @@ exports.about = async (req, res) => {
   try {
     res.render('about', locals);
   } catch (error) {
-    console.log(error);
+    res.status(500).json({ message: error.message });
   }
 };
 
-exports.addInvestor = async (req, res) => {
+exports.addInvestor = async (_req, res) => {
   const locals = {
     title: 'Add New Investor',
     description: 'NCDF Investors Management System',
@@ -78,12 +78,6 @@ exports.postInvestor = async (req, res) => {
     temperatureLevel,
   } = req.body;
 
-  // const investor = await Investor.find({ email });
-
-  // if (investor) {
-  //   return new Error('Investor already exist', 404);
-  // }
-
   const newInvestor = new Investor({
     title,
     firstName,
@@ -106,7 +100,7 @@ exports.postInvestor = async (req, res) => {
 
     res.redirect('/');
   } catch (error) {
-    console.log(error);
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -120,8 +114,9 @@ exports.view = async (req, res) => {
     };
 
     res.render('investor/view', { locals, investor });
+    // res.json({ locals, investor });
   } catch (error) {
-    console.log(error);
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -137,6 +132,7 @@ exports.edit = async (req, res) => {
     res.render('investor/edit', { locals, investors, enumData });
   } catch (error) {
     console.log(error);
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -160,7 +156,7 @@ exports.editPost = async (req, res) => {
     await res.redirect(`/edit/${req.params.id}`);
     console.log('redirected');
   } catch (error) {
-    console.log(error);
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -169,13 +165,13 @@ exports.deleteInvestor = async (req, res) => {
     await Investor.deleteOne({ _id: req.params.id });
     res.redirect('/');
   } catch (error) {
-    console.log(error);
+    res.status(500).json({ message: error.message });
   }
 };
 
 exports.searchInvestors = async (req, res) => {
   const locals = {
-    title: 'Search Customer Data',
+    title: 'Search Investors Data',
     description: 'NCDF Investors Management System',
   };
 
@@ -183,10 +179,13 @@ exports.searchInvestors = async (req, res) => {
     let searchTerm = req.body.searchTerm;
     const searchNoSpecialChar = searchTerm.replace(/[^a-zA-Z0-9 ]/g, '');
 
-    const investors = await Customer.find({
+    const investors = await Investor.find({
       $or: [
+        { title: { $regex: new RegExp(searchNoSpecialChar, 'i') } },
         { firstName: { $regex: new RegExp(searchNoSpecialChar, 'i') } },
         { lastName: { $regex: new RegExp(searchNoSpecialChar, 'i') } },
+        { phoneNumber: { $regex: new RegExp(searchNoSpecialChar, 'i') } },
+        { email: { $regex: new RegExp(searchNoSpecialChar, 'i') } },
       ],
     });
 
@@ -195,6 +194,6 @@ exports.searchInvestors = async (req, res) => {
       locals,
     });
   } catch (error) {
-    console.log(error);
+    res.status(500).json({ message: error.message });
   }
 };

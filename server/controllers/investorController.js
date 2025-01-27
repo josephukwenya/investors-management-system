@@ -13,7 +13,7 @@ exports.homepage = async (req, res) => {
     description: 'NCDF Investors Management System',
   };
 
-  let perPage = 10;
+  let perPage = 5;
   let page = req.query.page || 1;
 
   try {

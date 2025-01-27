@@ -17,7 +17,7 @@ exports.homepage = async (req, res) => {
   let page = req.query.page || 1;
 
   try {
-    const investors = await Investor.aggregate([{ $sort: { createdAt: -1 } }])
+    const investors = await Investor.aggregate([{ $sort: { createdAt: 1 } }])
       .skip(perPage * page - perPage)
       .limit(perPage)
       .exec();

@@ -37,14 +37,10 @@ const InvestorSchema = new Schema({
   },
   registered: {
     type: String,
-    enum: ['Yes', 'No'],
-    default: 'No',
     required: [true, 'Registered is required'],
   },
   committed: {
     type: String,
-    enum: ['Yes', 'No'],
-    default: 'No',
     required: [true, 'Committed is required'],
   },
   eventAttended: {

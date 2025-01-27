@@ -88,50 +88,6 @@
           </div>
         </td>
       </tr>
-
-      <tr class="align-middle">
-        <td><%= element.title %></td>
-        <td><%= element.firstName %></td>
-        <td><%= element.lastName %></td>
-        <td><%= element.email %></td>
-        <td><%= element.organization %></td>
-        <td><%= element.sector %></td>
-        <td><%= element.meansOfContact %></td>
-        <td><%= element.registered %></td>
-        <td><%= element.committed %></td>
-        <td><%= element.eventAttended %></td>
-        <td><%= element.progressUpdate %></td>
-        <td><%= element.temperatureLevel %></td>
-        <td class="text-end">
-          <div class="d-flex flex-row justify-content-end gap-2">
-            <a
-              href="/view/<%= element._id %>"
-              type="button"
-              class="btn btn-primary btn-small"
-            >
-              <i class="bi bi-eye"></i>
-            </a>
-
-            <a
-              href="/edit/<%= element._id %>"
-              type="button"
-              class="btn btn-warning btn-small"
-            >
-              <i class="bi bi-pencil"></i>
-            </a>
-
-            <form
-              action="/edit/<%= element._id %>?_method=DELETE"
-              method="POST"
-              class="position-relative"
-            >
-              <button type="submit" class="btn btn-danger btn-small">
-                <i class="bi bi-person-x"></i>
-              </button>
-            </form>
-          </div>
-        </td>
-      </tr>
       <% }) %>
     </tbody>
   </table>
@@ -140,26 +96,43 @@
 <% if (investors.length > 0) { %>
 <nav aria-label="Dashboard Pagination">
   <ul class="pagination justify-content-center mt-5">
-    <% if (current == 1) { %>
-    <li class="page-item disabled"><a href="#" class="page-link">First</a></li>
-    <% } else { %>
-    <li class="page-item"><a href="/?page=1" class="page-link">First</a></li>
-    <% } %> <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %> <%
-    if(i !== 1) { %>
-    <li class="page-item disabled"><a href="#" class="page-link">...</a></li>
-    <% } %> <% for(; i <= (Number(current) + 4) && i <= pages; i++ ) { %> <% if
-    (i == current) { %>
+    <!-- First Button -->
+    <% if (current === 1) { %>
     <li class="page-item disabled">
+      <a href="#" class="page-link">First</a>
+    </li>
+    <% } else { %>
+    <li class="page-item">
+      <a href="/?page=1" class="page-link">First</a>
+    </li>
+    <% } %>
+
+    <!-- Pagination Numbers -->
+    <% const rangeStart = Math.max(1, current - 2); %> <% const rangeEnd =
+    Math.min(pages, current + 2); %> <% if (rangeStart > 1) { %>
+    <li class="page-item disabled">
+      <a href="#" class="page-link">...</a>
+    </li>
+    <% } %> <% for (let i = rangeStart; i <= rangeEnd; i++) { %> <% if (i ===
+    current) { %>
+    <li class="page-item active">
       <a href="#" class="page-link"><%= i %></a>
     </li>
     <% } else { %>
     <li class="page-item">
       <a href="/?page=<%= i %>" class="page-link"><%= i %></a>
     </li>
-    <% } %> <% if (i == Number(current) + 4 && i < pages) { %>
-    <li class="page-item disabled"><a href="#" class="page-link">...</a></li>
-    <% } %> <% } %> <% if (current == pages) { %>
-    <li class="page-item disabled"><a href="#" class="page-link">Last</a></li>
+    <% } %> <% } %> <% if (rangeEnd < pages) { %>
+    <li class="page-item disabled">
+      <a href="#" class="page-link">...</a>
+    </li>
+    <% } %>
+
+    <!-- Last Button -->
+    <% if (current === pages) { %>
+    <li class="page-item disabled">
+      <a href="#" class="page-link">Last</a>
+    </li>
     <% } else { %>
     <li class="page-item">
       <a href="/?page=<%= pages %>" class="page-link">Last</a>
@@ -167,4 +140,13 @@
     <% } %>
   </ul>
 </nav>
+
+<!-- Investors List -->
+<ul class="list-group mt-3">
+  <% investors.forEach(investor => { %>
+  <li class="list-group-item"><%= investor.name %></li>
+  <% }); %>
+</ul>
+<% } else { %>
+<p>No investors found.</p>
 <% } %>

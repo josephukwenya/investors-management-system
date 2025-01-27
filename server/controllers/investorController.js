@@ -13,11 +13,11 @@ exports.homepage = async (req, res) => {
     description: 'NCDF Investors Management System',
   };
 
-  let perPage = 10;
+  let perPage = 5;
   let page = req.query.page || 1;
 
   try {
-    const investors = await Investor.aggregate([{ $sort: { createdAt: -1 } }])
+    const investors = await Investor.aggregate([{ $sort: { createdAt: 1 } }])
       .skip(perPage * page - perPage)
       .limit(perPage)
       .exec();

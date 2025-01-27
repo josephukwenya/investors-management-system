@@ -1,0 +1,222 @@
+[
+  {
+    "title": "Mr.",
+    "firstName": "Oloye",
+    "lastName": "Segun",
+    "phoneNumber": "08035061653",
+    "email": "segunoloye@mail.com",
+    "organization": "Eagle Premium Solution Services",
+    "sector": "ICT",
+    "meansOfContact": "Social media ads",
+    "registered": "No",
+    "committed": "No",
+    "eventAttended": "1st series",
+    "progressUpdate": "We are inviting him for the 3rd series",
+    "temperatureLevel": "Hot",
+    "createdAt": {
+      "$date": "2025-01-27T14:33:34.691Z"
+    },
+    "updatedAt": {
+      "$date": "2025-01-27T14:33:34.691Z"
+    },
+    "__v": 0
+  },
+  {
+    "title": "AKC",
+    "firstName": "Abimbola",
+    "lastName": "Olufemi",
+    "phoneNumber": "08140000300",
+    "email": "olufemiabimbola1@gmail.com",
+    "organization": "ORAC,NIG LTD/ PROJECT CRAFTERS LTD",
+    "sector": "Architecture/Constructure/Interiors",
+    "meansOfContact": "Referral",
+    "registered": "Not yet",
+    "committed": "No update",
+    "eventAttended": "2st series",
+    "progressUpdate": "Yet to respond",
+    "temperatureLevel": "Warm",
+    "createdAt": {
+      "$date": "2025-01-27T14:42:26.745Z"
+    },
+    "updatedAt": {
+      "$date": "2025-01-27T14:42:26.745Z"
+    },
+    "__v": 0
+  },
+  {
+    "title": "Judge",
+    "firstName": "Oshodi",
+    "lastName": "Olatunde Hakeem",
+    "phoneNumber": "08027319070",
+    "email": "olatundeoshodi@gmail.com",
+    "organization": "Lagos State Judiciary",
+    "sector": "Judiciary",
+    "meansOfContact": "Referral",
+    "registered": "Not yet",
+    "committed": "No update",
+    "eventAttended": "2st series",
+    "progressUpdate": "We are inviting him for the 3rd series",
+    "temperatureLevel": "Warm",
+    "createdAt": {
+      "$date": "2025-01-27T15:03:37.211Z"
+    },
+    "updatedAt": {
+      "$date": "2025-01-27T15:03:37.211Z"
+    },
+    "__v": 0
+  },
+  {
+    "title": "Managing Partner",
+    "firstName": "Abudu",
+    "lastName": "Mopelola",
+    "phoneNumber": "08037202163",
+    "email": "mope@knight.ventures, mope@afriglocalvc.com",
+    "organization": "Afriglocal VC and Knight Ventures",
+    "sector": "FinTech",
+    "meansOfContact": "Social media ads",
+    "registered": "Not yet",
+    "committed": "No update",
+    "eventAttended": "2st series",
+    "progressUpdate": "We are inviting him for the 3rd series",
+    "temperatureLevel": "Hot",
+    "createdAt": {
+      "$date": "2025-01-27T15:03:37.211Z"
+    },
+    "updatedAt": {
+      "$date": "2025-01-27T15:03:37.211Z"
+    },
+    "__v": 0
+  },
+  {
+    "title": "Founder",
+    "firstName": "Raheem",
+    "lastName": "Alade Jaleel",
+    "phoneNumber": "08034955262",
+    "email": "drumsfieldfarm@gmail.com",
+    "organization": "Drumsfield",
+    "sector": "AGRIBUSINESS",
+    "meansOfContact": "Social media ads",
+    "registered": "Not yet",
+    "committed": "No update",
+    "eventAttended": "2st series",
+    "progressUpdate": "We are inviting him for the 3rd series",
+    "temperatureLevel": "Warm",
+    "createdAt": {
+      "$date": "2025-01-27T15:03:37.211Z"
+    },
+    "updatedAt": {
+      "$date": "2025-01-27T15:03:37.211Z"
+    },
+    "__v": 0
+  },
+  {
+    "title": "Engineer",
+    "firstName": "Ezeike",
+    "lastName": "Emmanuel",
+    "phoneNumber": "08068689160",
+    "email": "prince.ezeike@gmail.com",
+    "organization": "Barer Hughes INC/OATHEN ENERGY",
+    "sector": "Energy (Oil & Gas)",
+    "meansOfContact": "In-person",
+    "registered": "Not yet",
+    "committed": "No update",
+    "eventAttended": "1st series",
+    "progressUpdate": "We are inviting him for the 3rd series",
+    "temperatureLevel": "Hot",
+    "createdAt": {
+      "$date": "2025-01-27T15:17:08.818Z"
+    },
+    "updatedAt": {
+      "$date": "2025-01-27T15:17:08.818Z"
+    },
+    "__v": 0
+  },
+  {
+    "title": "Mr.",
+    "firstName": "Amodu",
+    "lastName": "Akeem",
+    "phoneNumber": "08089188445",
+    "email": "akeemamodu@hotmail.com",
+    "organization": "AAACES ENTERPRISES\tAUTO",
+    "sector": "Real Estate",
+    "meansOfContact": "Social media ads",
+    "registered": "Not yet",
+    "committed": "No update",
+    "eventAttended": "2st series",
+    "progressUpdate": "We are inviting him for the 3rd series",
+    "temperatureLevel": "Warm",
+    "createdAt": {
+      "$date": "2025-01-27T15:19:34.695Z"
+    },
+    "updatedAt": {
+      "$date": "2025-01-27T15:19:34.695Z"
+    },
+    "__v": 0
+  },
+  {
+    "title": "Mr.",
+    "firstName": "Owokoya",
+    "lastName": "Oluwakayode",
+    "phoneNumber": "07066051313",
+    "email": "kayode.owokoya@synergywavelimited.com",
+    "organization": "Synergy Wave limited",
+    "sector": "Financial Services / Consulting",
+    "meansOfContact": "Referral",
+    "registered": "Not yet",
+    "committed": "No update",
+    "eventAttended": "1st series",
+    "progressUpdate": "Yet to respond",
+    "temperatureLevel": "Cold",
+    "createdAt": {
+      "$date": "2025-01-27T15:19:34.695Z"
+    },
+    "updatedAt": {
+      "$date": "2025-01-27T15:19:34.695Z"
+    },
+    "__v": 0
+  },
+  {
+    "title": "Director",
+    "firstName": "Micheal",
+    "lastName": "Gbenga Bankole",
+    "phoneNumber": "08106369117",
+    "email": "mbanky84@gmail.com",
+    "organization": "Lawnet International School",
+    "sector": "Education",
+    "meansOfContact": "Referral",
+    "registered": "Not yet",
+    "committed": "No update",
+    "eventAttended": "1st series",
+    "progressUpdate": "Yet to respond",
+    "temperatureLevel": "Warm",
+    "createdAt": {
+      "$date": "2025-01-27T15:19:34.695Z"
+    },
+    "updatedAt": {
+      "$date": "2025-01-27T15:19:34.695Z"
+    },
+    "__v": 0
+  },
+  {
+    "title": "Pastor/CEO",
+    "firstName": "Adeniran",
+    "lastName": "A. Israel",
+    "phoneNumber": "08096983275",
+    "email": "adeniranisreal3@gmail.com",
+    "organization": "MOREWORTH GLOBAL RESOURCES",
+    "sector": "CONSULTING",
+    "meansOfContact": "Social media ads",
+    "registered": "Not yet",
+    "committed": "No update",
+    "eventAttended": "1st series",
+    "progressUpdate": "We are inviting him for the 3rd series",
+    "temperatureLevel": "Hot",
+    "createdAt": {
+      "$date": "2025-01-27T15:19:34.695Z"
+    },
+    "updatedAt": {
+      "$date": "2025-01-27T15:19:34.695Z"
+    },
+    "__v": 0
+  }
+]

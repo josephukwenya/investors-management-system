@@ -5,7 +5,7 @@ const expressLayout = require('express-ejs-layouts');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 
-const investorRoute = require('./server/routes/investorRoute');
+const adminRoute = require('./server/routes/adminRoute');
 
 // npm install connect-flash
 const flash = require('connect-flash');
@@ -48,7 +48,7 @@ app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 
 // Routes
-app.use('/', investorRoute);
+app.use('/', adminRoute);
 
 // Handle 404
 app.get('*', (_req, res) => {

@@ -1,8 +1,80 @@
+const Admin = require('../models/Admin');
 const Investor = require('../models/Investor');
 
 const enumData = {
   meansOfContact: ['Social media ads', 'Referral', 'In-person'],
   temperatureLevel: ['Hot', 'Warm', 'Cold'],
+};
+
+exports.register = async (req, res) => {
+  try {
+    const { username, email, password } = req.body;
+
+    const adminExists = await Admin.findOne({ email });
+
+    if (adminExists) {
+      return res.status(400).json({
+        success: false,
+        error: 'Admin already exists',
+      });
+    }
+
+    const admin = await Admin.create({
+      username,
+      email,
+      password,
+    });
+
+    res.status(201).json({
+      success: true,
+      data: admin,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      error: error.message,
+    });
+  }
+};
+
+exports.login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const admin = await Admin.findOne({ email });
+
+    if (!admin) {
+      return res.status(400).json({
+        success: false,
+        error: 'Invalid credentials',
+      });
+    }
+
+    const isMatch = await admin.matchPassword(password);
+
+    if (!isMatch) {
+      return res.status(400).json({
+        success: false,
+        error: 'Invalid credentials',
+      });
+    }
+
+    // Create token
+    const token = admin.getSignedJwtToken();
+
+    admin.password = undefined;
+
+    res.status(200).json({
+      success: true,
+      data: admin,
+      token,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      error: error.message,
+    });
+  }
 };
 
 exports.homepage = async (req, res) => {
